@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-desktop-color: "#F6FAFA"
+desktop-color: "#202626"
 terminal-font: "GNU Unifont Regular 16"
 terminal-left: "0"
 terminal-top: "0"
@@ -25,8 +25,8 @@ title-text: ""
     width = 60%
     height = 39%
 
-    item_color = "#495454"
-    selected_item_color = "#202626"
+    item_color = "#C4CCCD"
+    selected_item_color = "#FFFFFF"
 
     item_font = "Roboto Regular 20"
 
@@ -47,21 +47,21 @@ title-text: ""
     left = 24%+8
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_select.png"
+    file = "/boot/grub/themes/lineage/dark/images/guide_select.png"
 }
 
 + image {
     left = 36%+12
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_confirm.png"
+    file = "/boot/grub/themes/lineage/dark/images/guide_confirm.png"
 }
 
 + image {
     left = 66%
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_commandline.png"
+    file = "/boot/grub/themes/lineage/dark/images/guide_commandline.png"
 }
 
 + progress_bar {
@@ -72,15 +72,15 @@ title-text: ""
 
     id = "__timeout__"
 
-    #fg_color = "#167C80"
-    #bg_color = "#E8EDEE"
+    #fg_color = "#8e44ad"
+    #bg_color = "#2A3232"
     #bar_style = "highlight_style"
 
     highlight_style = "progress_hl_*.png"
     bar_style = "progress_frame_*.png"
     highlight_overlay = "true"
 
-    border_color = "#F6FAFA" # same as desktop-color
+    border_color = "#202626" # same as desktop-color
 }
 
 + label {
@@ -89,7 +89,7 @@ title-text: ""
 
     text = "Booting in    seconds"
     font = "GNU Unifont Regular 16"
-    color = "#495454" # boot_menu item_color
+    color = "#808D8D"
 }
 
 + label {
@@ -98,7 +98,7 @@ title-text: ""
 
     id = "__timeout__"
     font = "GNU Unifont Regular 16"
-    color = "#495454" # boot_menu item_color
+    color = "#808D8D"
 }
 
 + label {
@@ -107,5 +107,5 @@ title-text: ""
 
     text = "@LINEAGE_VERSION@"
     font = "GNU Unifont Regular 16"
-    color = "#495454" # boot_menu item_color
+    color = "#808D8D"
 }
