@@ -47,9 +47,9 @@ define install-grub-theme
 	mkdir -p $(1)/boot/grub/themes
 	rm -rf $(1)/boot/grub/themes/$(BOOTMGR_THEME)
 	$(if $(BOOTMGR_THEME), cp -r $(COMMON_GRUB_PATH)/themes/$(BOOTMGR_THEME) $(1)/boot/grub/themes/)
-	$(if $(filter lineage,$(BOOTMGR_THEME)),\
+	$(if $(filter lmodroid,$(BOOTMGR_THEME)),\
 		cp $(COMMON_GRUB_PATH)/fonts/Roboto-Regular-20.pf2 $(1)/boot/grub/fonts/;\
-		sed -i "s|@LINEAGE_VERSION@|$(LINEAGE_VERSION)|g" $(1)/boot/grub/themes/lineage/dark/theme.txt $(1)/boot/grub/themes/lineage/light/theme.txt;\
+		sed -i "s|@LMODROID_BUILD_NAME@|$(LMODROID_BUILD_NAME)|g" $(1)/boot/grub/themes/lmodroid/dark/theme.txt $(1)/boot/grub/themes/lmodroid/light/theme.txt;\
 	)
 endef
 
@@ -106,7 +106,7 @@ endef
 ##### isoimage-boot #####
 
 ifeq ($(TARGET_GRUB_ARCH),x86_64-efi)
-ifneq ($(LINEAGE_BUILD),)
+ifneq ($(LMODROID_BUILD),)
 
 INSTALLED_ISOIMAGE_BOOT_TARGET := $(PRODUCT_OUT)/$(BOOTMGR_ARTIFACT_FILENAME_PREFIX)-boot.iso
 $(INSTALLED_ISOIMAGE_BOOT_TARGET): $(INSTALLED_ESPIMAGE_TARGET) $(TARGET_GRUB_BOOT_CONFIG)
@@ -116,13 +116,13 @@ $(INSTALLED_ISOIMAGE_BOOT_TARGET): $(INSTALLED_ESPIMAGE_TARGET) $(TARGET_GRUB_BO
 .PHONY: isoimage-boot
 isoimage-boot: $(INSTALLED_ISOIMAGE_BOOT_TARGET)
 
-endif # LINEAGE_BUILD
+endif # LMODROID_BUILD
 endif # TARGET_GRUB_ARCH
 
 ##### isoimage-install #####
 
 ifeq ($(TARGET_GRUB_ARCH),x86_64-efi)
-ifneq ($(LINEAGE_BUILD),)
+ifneq ($(LMODROID_BUILD),)
 
 INSTALLED_ISOIMAGE_INSTALL_TARGET := $(PRODUCT_OUT)/$(BOOTMGR_ARTIFACT_FILENAME_PREFIX).iso
 $(INSTALLED_ISOIMAGE_INSTALL_TARGET): $(INSTALLED_ESPIMAGE_INSTALL_TARGET) $(TARGET_GRUB_INSTALL_CONFIG)
@@ -132,7 +132,7 @@ $(INSTALLED_ISOIMAGE_INSTALL_TARGET): $(INSTALLED_ESPIMAGE_INSTALL_TARGET) $(TAR
 .PHONY: isoimage-install
 isoimage-install: $(INSTALLED_ISOIMAGE_INSTALL_TARGET)
 
-endif # LINEAGE_BUILD
+endif # LMODROID_BUILD
 endif # TARGET_GRUB_ARCH
 
 ##### persistimage dependencies #####

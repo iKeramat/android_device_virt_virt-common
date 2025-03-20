@@ -131,7 +131,7 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackageGo.mk)
 # Enable DM file preopting to reduce first boot time
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
-ifeq ($(LINEAGE_BUILD),)
+ifeq ($(LMODROID_BUILD),)
 PRODUCT_PACKAGES += \
     Launcher3QuickStepGo
 endif
@@ -208,9 +208,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
     $(VIRT_COMMON_PATH)/overlays/product_overlay-tablet
 endif
 
-ifneq ($(LINEAGE_BUILD),)
+ifneq ($(LMODROID_BUILD),)
 DEVICE_PACKAGE_OVERLAYS += \
-    $(VIRT_COMMON_PATH)/overlays/overlay-lineage
+    $(VIRT_COMMON_PATH)/overlays/overlay-lmodroid
 endif
 
 PRODUCT_ENFORCE_RRO_TARGETS := *

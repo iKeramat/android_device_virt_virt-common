@@ -16,7 +16,7 @@ title-text: ""
     left = 46%
     top = 14%
 
-    file = "/boot/grub/themes/lineage/images/lineage_mark.png"
+    file = "/boot/grub/themes/lmodroid/images/lmo_mark.png"
 }
 
 + boot_menu {
@@ -47,21 +47,21 @@ title-text: ""
     left = 24%+8
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_select.png"
+    file = "/boot/grub/themes/lmodroid/light/images/guide_select.png"
 }
 
 + image {
     left = 36%+12
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_confirm.png"
+    file = "/boot/grub/themes/lmodroid/light/images/guide_confirm.png"
 }
 
 + image {
     left = 66%
     top = 73%
 
-    file = "/boot/grub/themes/lineage/light/images/guide_commandline.png"
+    file = "/boot/grub/themes/lmodroid/light/images/guide_commandline.png"
 }
 
 + progress_bar {
@@ -72,7 +72,7 @@ title-text: ""
 
     id = "__timeout__"
 
-    #fg_color = "#167C80"
+    #fg_color = "#8e44ad"
     #bg_color = "#E8EDEE"
     #bar_style = "highlight_style"
 
@@ -105,7 +105,7 @@ title-text: ""
     left = 0%
     top = 98%
 
-    text = "@LINEAGE_VERSION@"
+    text = "@LMODROID_BUILD_NAME@"
     font = "GNU Unifont Regular 16"
     color = "#495454" # boot_menu item_color
 }
