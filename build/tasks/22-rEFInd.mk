@@ -47,9 +47,9 @@ define make-espimage
 	cp $(5) $(3)/fsroot/EFI/BOOT/refind.conf
 	$(call process-bootmgr-cfg-common,$(3)/fsroot/EFI/BOOT/refind.conf)
 
-	$(if $(LINEAGE_BUILD),\
-		cp $(COMMON_REFIND_PATH)/icons/os_lineage.png $(3)/fsroot/EFI/BOOT/icons/ && \
-		sed -i "s|os_linux.png|os_lineage.png|g" $(3)/fsroot/EFI/BOOT/refind.conf \
+	$(if $(LMODROID_BUILD),\
+		cp $(COMMON_REFIND_PATH)/icons/os_lmodroid.png $(3)/fsroot/EFI/BOOT/icons/ && \
+		sed -i "s|os_linux.png|os_lmodroid.png|g" $(3)/fsroot/EFI/BOOT/refind.conf \
 	)
 
 	$(call create-fat32image,$(1),$(3)/fsroot/EFI $(2),$(4))
