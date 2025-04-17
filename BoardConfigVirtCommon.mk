@@ -56,7 +56,6 @@ include device/google/cuttlefish/shared/swiftshader/BoardConfig.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(VIRT_COMMON_PATH):init_virt
-TARGET_RECOVERY_DEVICE_MODULES ?= init_virt
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
@@ -203,9 +202,6 @@ BOARD_VENDOR_SEPOLICY_DIRS := \
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(VIRT_COMMON_PATH)/sepolicy/private
 
 # VINTF
-DEVICE_MANIFEST_FILE := \
-    $(VIRT_COMMON_PATH)/configs/vintf/manifest.xml
-
 ifeq ($(TARGET_AUDIO_HAL_USE),ranchu-hidl)
 DEVICE_MANIFEST_FILE += \
     device/google/cuttlefish/guest/hals/audio/effects/manifest.xml
